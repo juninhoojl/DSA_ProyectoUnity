@@ -37,7 +37,7 @@ namespace Completed
                     if (mapMatrix[y][x]=="X")
                         toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                     else if (mapMatrix[y][x] == "P")
-                        toInstantiate = wallTiles[Random.Range(0, outerWallTiles.Length)];
+                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
                     else if (mapMatrix[y][x] == "E")
                         toInstantiate = exit;
 
