@@ -68,8 +68,8 @@ namespace Completed
 
         //SetupScene initializes our level and calls the previous functions to lay out the game board
         public void SetupScene(int level)
-        {
-            ParseMapString(@"C:\Users\pepv\Desktop\mapa1.csv");//Es una ruta absoluta, lo sé, es para testear.
+        {   
+            ParseMapString(@"/Users/joseluizjunior/Documents/mapas/mapa2.csv");//Es una ruta absoluta, lo sé, es para testear.
 
             //Creates the outer walls and floor.
             BoardSetup();

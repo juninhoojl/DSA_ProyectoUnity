@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;        //Allows us to use Lists. 
 using Completed;
 
+
 public class GameManager : MonoBehaviour
 {
 
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     //Initializes the game for each level.
     void InitGame()
     {
+
         //Call the SetupScene function of the BoardManager script, pass it current level number.
         boardScript.SetupScene(level);
 
