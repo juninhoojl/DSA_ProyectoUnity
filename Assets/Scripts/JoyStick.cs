@@ -31,8 +31,8 @@ public class JoyStick : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
             // No screen view da o default value
-            circle.transform.position = pointA;
-            outerCircle.transform.position = pointA;
+            circle.transform.position = new Vector3(pointA.x, pointA.y, circle.position.z);;
+            outerCircle.transform.position = new Vector3(pointA.x, pointA.y, outerCircle.position.z);;
             circle.GetComponent<SpriteRenderer>().enabled = true;
             circle.GetComponent<SpriteRenderer>().enabled = true;
         }
@@ -59,8 +59,11 @@ public class JoyStick : MonoBehaviour
             Vector2 offset = pointB - pointA;
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
             moveCharacter(direction);
+            
 
-            circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y);
+            circle.transform.position = new Vector3(pointA.x + direction.x, pointA.y + direction.y, circle.position.z);
+
+            //circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y);
 
         }
 
