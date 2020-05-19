@@ -16,7 +16,10 @@ namespace Completed
         public GameObject piso_direito;
         
                                                   //Prefab to spawn for exit.
-        public GameObject[] floorTiles;                                    //Array of floor prefabs.
+        public GameObject[] floorTiles;   
+        
+        public GameObject parede;
+                                         //Array of floor prefabs.
         public GameObject[] wallTiles;                                    //Array of wall prefabs.
         public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
 
@@ -40,9 +43,13 @@ namespace Completed
                     GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
 
                     if (mapMatrix[y][x]=="X")
-                        toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+                        toInstantiate = parede;
+                        
+                        // outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                     else if (mapMatrix[y][x] == "P")
-                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                        toInstantiate = parede;
+                        
+                        //wallTiles[Random.Range(0, wallTiles.Length)];
                     else if (mapMatrix[y][x] == "E")
                         toInstantiate = exit;
                     else if (mapMatrix[y][x] == "O")
