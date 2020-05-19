@@ -385,6 +385,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 540341920497444735, guid: fa479dec0440d8c48820ea07b880d04d,
         type: 3}
+    - target: {fileID: 8731553285201911547, guid: e2eb4dcde2eeebd4a82df92062736d5b,
+        type: 3}
+      propertyPath: piso_esquerdo
+      value: 
+      objectReference: {fileID: 3460734096811448769, guid: a0f1e82cc62f142fea8970c62056f475,
+        type: 3}
+    - target: {fileID: 8731553285201911547, guid: e2eb4dcde2eeebd4a82df92062736d5b,
+        type: 3}
+      propertyPath: exit
+      value: 
+      objectReference: {fileID: 3441421922550324127, guid: 39f55c10666f44ff08ef806816929b52,
+        type: 3}
+    - target: {fileID: 8731553285201911547, guid: e2eb4dcde2eeebd4a82df92062736d5b,
+        type: 3}
+      propertyPath: piso_direito
+      value: 
+      objectReference: {fileID: 3460734096811448769, guid: a0f1e82cc62f142fea8970c62056f475,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2eb4dcde2eeebd4a82df92062736d5b, type: 3}
 --- !u!1 &519420028

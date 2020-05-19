@@ -10,7 +10,12 @@ namespace Completed
 
     public class BoardManager : MonoBehaviour
     {
-        public GameObject exit;                                            //Prefab to spawn for exit.
+        public GameObject exit;  
+        
+        public GameObject piso_esquerdo;
+        public GameObject piso_direito;
+        
+                                                  //Prefab to spawn for exit.
         public GameObject[] floorTiles;                                    //Array of floor prefabs.
         public GameObject[] wallTiles;                                    //Array of wall prefabs.
         public GameObject[] outerWallTiles;                                //Array of outer tile prefabs.
@@ -29,7 +34,7 @@ namespace Completed
             for (int y =0; y < mapMatrix.Length; y++)
             {
                 //Loop along y axis, starting from -1 to place floor or outerwall tiles.
-                for (int x = 0; x < mapMatrix[y].Length; x++)
+                for (int x = 0; x < mapMatrix[y].Length; x+=1)
                 {
                     //Choose a random tile from our array of floor tile prefabs and prepare to instantiate it.
                     GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
@@ -40,6 +45,9 @@ namespace Completed
                         toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
                     else if (mapMatrix[y][x] == "E")
                         toInstantiate = exit;
+                    else if (mapMatrix[y][x] == "O")
+                        toInstantiate = piso_esquerdo;
+                        //toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
 
                     //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
                     GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
@@ -47,6 +55,30 @@ namespace Completed
                     //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
                     instance.transform.SetParent(boardHolder);
                 }
+                /*
+                for (int x = 1; x < mapMatrix[y].Length; x+=2)
+                {
+                    //Choose a random tile from our array of floor tile prefabs and prepare to instantiate it.
+                    GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length-1)];
+
+                    if (mapMatrix[y][x]=="X")
+                        toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+                    else if (mapMatrix[y][x] == "P")
+                        toInstantiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                    else if (mapMatrix[y][x] == "E")
+                        toInstantiate = exit;
+                    else if (mapMatrix[y][x] == "O")
+                        toInstantiate = piso_direito;
+                        //toInstantiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+
+                    //Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
+                    GameObject instance = Instantiate(toInstantiate, new Vector3(x, mapMatrix.Length - y, 0f), Quaternion.identity) as GameObject;
+
+                    //Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
+                    instance.transform.SetParent(boardHolder);
+                }
+                */
+
             }
         }
 
